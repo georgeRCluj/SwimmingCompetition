@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Header colors and transparency -->
+    <color name="header_text_color">#FFFFFF</color>
+    <color name="header_background_color">#80648B9E</color> <!-- transparency 20%
+        (difference 100-80 in front of the color) -->
+
+    <!-- Buttons color -->
+    <color name="buttons_background_color">#24546B</color>
+    <color name="buttons_font_color">#FFFFFF</color>
+
+    <!-- Separator color -->
+    <color name="separator_background_color">@color/buttons_background_color</color>
+
+</resources>

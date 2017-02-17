@@ -1,0 +1,27 @@
+<resources>
+    <!-- Weights -->
+    <integer name="main_screen_weight_1">3</integer>
+    <integer name="main_screen_weight_2">7</integer>
+    <integer name="body_half_weight">1</integer>
+
+    <!-- Text Sizes-->
+    <dimen name="normal_text_size">15sp</dimen>
+    <dimen name="medium_text_size">20sp</dimen>
+    <dimen name="pace_stroke_text_size">18sp</dimen>
+    <dimen name="large_text_size">25sp</dimen>
+
+    <!-- Separator width-->
+    <dimen name="separator_width">1dp</dimen>
+
+    <!-- Margins and paddings -->
+    <dimen name="vertical_margin_large">16dp</dimen>
+    <dimen name="vertical_margin_medium">8dp</dimen>
+    <dimen name="vertical_margin_small">4dp</dimen>
+    <dimen name="horizontal_margin_large">16dp</dimen>
+    <dimen name="horizontal_margin_medium">8dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="vertical_margin_reset_button">4dp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_horizontal_margin">8dp</dimen>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Swimming Competition</string>
+    <string name="game_name">Open Water Swimming \n Score Keeper</string>
+
+    <!-- Button names -->
+    <string name="resetButton">reset</string>
+    <string name="add_10_meters">+10 mt</string>
+    <string name="add_30_seconds">"+30 \""</string>
+    <string name="add_15_strokes">+15 strk</string>
+    <string name="total_meters">T: 0 mt</string>
+    <string name="total_time">"T: 0\' 0\""</string>
+    <string name="total_strokes">T: 0 strk</string>
+
+    <!-- Score, Pace, stroke, swimmers -->
+    <string name="initial_score">0</string>
+    <string name="pace_string">0 km/h</string>
+    <string name="stroke_string">0 strk/mn</string>
+    <string name="swimmer_1_string">Swimmer 1</string>
+    <string name="swimmer_2_string">Swimmer 2</string>
+    <string name="swimmer_3_string">Swimmer 3</string>
+    <string name="swimmer_4_string">Swimmer 4</string>
+
+    <!-- Teams and swimmers -->
+    <string name="teamA">team a</string>
+    <string name="teamB">team b</string>
+
+</resources>

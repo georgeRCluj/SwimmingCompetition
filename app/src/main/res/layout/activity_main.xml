@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.swimmingcompetition.MainActivity">
+
+    <!-- HEADER below -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="@integer/main_screen_weight_1"
+        android:background="@drawable/ows_cropped_2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/game_name" />
+    </LinearLayout>
+
+    <!-- BODY below -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="@integer/main_screen_weight_2"
+        android:orientation="horizontal">
+
+        <!-- TEAM A -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/body_half_weight"
+            android:orientation="vertical">
+
+            <!-- Upper part: TEAM A, Score -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Team_Style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/teamA" />
+
+                <TextView
+                    android:id="@+id/score_team_A"
+                    style="@style/Score_Style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/initial_score" />
+
+            </LinearLayout>
+
+            <!-- Lower part: Swimmer 1, 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Swimmer 1 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/body_half_weight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Pace_Stroke_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pace_string" />
+
+                    <TextView
+                        style="@style/Swimmer_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/swimmer_1_string" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="swimmer1_10meters"
+                        android:text="@string/add_10_meters" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_30_seconds" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_15_strokes" />
+
+                    <TextView
+                        android:id="@+id/totalTimeSwimmer1"
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_meters" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_time" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_strokes" />
+                </LinearLayout>
+
+                <!-- Swimmer 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/body_half_weight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Pace_Stroke_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stroke_string" />
+
+                    <TextView
+                        style="@style/Swimmer_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/swimmer_2_string" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="swm1_10m"
+                        android:text="@string/add_10_meters" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_30_seconds" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_15_strokes" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_meters" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_time" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_strokes" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Separator below -->
+        <View
+            style="@style/Separator_style"
+            android:layout_width="@dimen/separator_width"
+            android:layout_height="match_parent" />
+
+        <!-- TEAM B -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/body_half_weight"
+            android:orientation="vertical">
+
+            <!-- Upper part: TEAM B, Score -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Team_Style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/teamB" />
+
+                <TextView
+                    android:id="@+id/score_team_A"
+                    style="@style/Score_Style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/initial_score" />
+
+            </LinearLayout>
+
+            <!-- Lower part: Swimmer 3, 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Swimmer 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/body_half_weight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Pace_Stroke_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pace_string" />
+
+                    <TextView
+                        style="@style/Swimmer_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/swimmer_3_string" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="swm1_10m"
+                        android:text="@string/add_10_meters" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_30_seconds" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_15_strokes" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_meters" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_time" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_strokes" />
+                </LinearLayout>
+
+                <!-- Swimmer 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="@integer/body_half_weight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Pace_Stroke_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stroke_string" />
+
+                    <TextView
+                        style="@style/Swimmer_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/swimmer_4_string" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="swm1_10m"
+                        android:text="@string/add_10_meters" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_30_seconds" />
+
+                    <TextView
+                        style="@style/Button_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_15_strokes" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_meters" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_time" />
+
+                    <TextView
+                        style="@style/Data_Style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_strokes" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RESET Button below -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            style="@style/reset_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resetButton" />
+
+    </LinearLayout>
+</LinearLayout>
