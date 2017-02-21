@@ -75,6 +75,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/speedTeamA"
                         style="@style/Pace_Stroke_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -87,38 +88,45 @@
                         android:text="@string/swimmer_1_string" />
 
                     <TextView
+                        android:id="@+id/swimmer1Add10mt"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="swimmer1_10meters"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_10_meters" />
 
                     <TextView
+                        android:id="@+id/swimmer1Add30sec"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_30_seconds" />
 
                     <TextView
+                        android:id="@+id/swimmer1Add10stk"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/add_15_strokes" />
+                        android:onClick="swimmerButtons"
+                        android:text="@string/add_10_strokes" />
 
                     <TextView
-                        android:id="@+id/totalTimeSwimmer1"
+                        android:id="@+id/totalDistanceSwimmer1"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_meters" />
 
                     <TextView
+                        android:id="@+id/totalTimeSwimmer1"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_time" />
 
                     <TextView
+                        android:id="@+id/totalStrokesSwimmer1"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -133,6 +141,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/strokeTeamA"
                         style="@style/Pace_Stroke_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,37 +154,45 @@
                         android:text="@string/swimmer_2_string" />
 
                     <TextView
+                        android:id="@+id/swimmer2Add10mt"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="swm1_10m"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_10_meters" />
 
                     <TextView
+                        android:id="@+id/swimmer2Add30sec"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_30_seconds" />
 
                     <TextView
+                        android:id="@+id/swimmer2Add10stk"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/add_15_strokes" />
+                        android:onClick="swimmerButtons"
+                        android:text="@string/add_10_strokes" />
 
                     <TextView
+                        android:id="@+id/totalDistanceSwimmer2"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_meters" />
 
                     <TextView
+                        android:id="@+id/totalTimeSwimmer2"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_time" />
 
                     <TextView
+                        android:id="@+id/totalStrokesSwimmer2"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -211,7 +228,7 @@
                     android:text="@string/teamB" />
 
                 <TextView
-                    android:id="@+id/score_team_A"
+                    android:id="@+id/score_team_B"
                     style="@style/Score_Style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -234,6 +251,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/speedTeamB"
                         style="@style/Pace_Stroke_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -246,37 +264,45 @@
                         android:text="@string/swimmer_3_string" />
 
                     <TextView
+                        android:id="@+id/swimmer3Add10mt"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="swm1_10m"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_10_meters" />
 
                     <TextView
+                        android:id="@+id/swimmer3Add30sec"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_30_seconds" />
 
                     <TextView
+                        android:id="@+id/swimmer3Add10stk"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/add_15_strokes" />
+                        android:onClick="swimmerButtons"
+                        android:text="@string/add_10_strokes" />
 
                     <TextView
+                        android:id="@+id/totalDistanceSwimmer3"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_meters" />
 
                     <TextView
+                        android:id="@+id/totalTimeSwimmer3"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_time" />
 
                     <TextView
+                        android:id="@+id/totalStrokesSwimmer3"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -291,6 +317,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/strokeTeamB"
                         style="@style/Pace_Stroke_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -303,37 +330,46 @@
                         android:text="@string/swimmer_4_string" />
 
                     <TextView
+                        android:id="@+id/swimmer4Add10mt"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="swm1_10m"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_10_meters" />
 
                     <TextView
+                        android:id="@+id/swimmer4Add30sec"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="swimmerButtons"
                         android:text="@string/add_30_seconds" />
 
                     <TextView
+                        android:id="@+id/swimmer4Add10stk"
                         style="@style/Button_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/add_15_strokes" />
+                        android:onClick="swimmerButtons"
+                        android:text="@string/add_10_strokes" />
 
                     <TextView
+                        android:id="@+id/totalDistanceSwimmer4"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/total_meters" />
 
                     <TextView
+                        android:id="@+id/totalTimeSwimmer4"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:onClick="swimmerButtons"
                         android:text="@string/total_time" />
 
                     <TextView
+                        android:id="@+id/totalStrokesSwimmer4"
                         style="@style/Data_Style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -354,6 +390,7 @@
             style="@style/reset_button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="ResetButton"
             android:text="@string/resetButton" />
 
     </LinearLayout>
