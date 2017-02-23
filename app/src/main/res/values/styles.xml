@@ -40,7 +40,7 @@
     <style name="Swimmer_Style">
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
         <item name="android:layout_marginTop">4dp</item>
     </style>
 
@@ -63,13 +63,18 @@
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:paddingTop">@dimen/button_vertical_padding</item>
         <item name="android:paddingBottom">@dimen/button_vertical_padding</item>
-        <item name="android:layout_marginTop">@dimen/button_vertical_margin</item>
         <item name="android:layout_marginBottom">@dimen/button_vertical_margin</item>
+        <item name="android:layout_marginTop">@dimen/button_vertical_margin</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:clickable">true</item>
         <item name="android:textColor">#A97233</item>
         <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Button Style - first line-->
+    <style name="Button_Style_first_line" parent="Button_Style">
+        <item name="android:layout_marginTop">0dp</item>
     </style>
 
     <!-- Data Style-->
