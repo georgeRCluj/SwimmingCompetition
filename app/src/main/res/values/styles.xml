@@ -46,8 +46,6 @@
 
     <!-- Score style -->
     <style name="Score_Style">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/large_text_size</item>
         <item name="android:layout_margin">@dimen/margin_medium</item>
     </style>
@@ -63,10 +61,10 @@
     <style name="Button_Style">
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
-        <item name="android:paddingTop">3dp</item>
-        <item name="android:paddingBottom">3dp</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingTop">@dimen/button_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/button_vertical_padding</item>
+        <item name="android:layout_marginTop">@dimen/button_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/button_vertical_margin</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
         <item name="android:clickable">true</item>
@@ -78,13 +76,14 @@
     <style name="Data_Style">
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/normal_text_size</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">@dimen/button_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/button_vertical_margin</item>
     </style>
 
     <!-- Reset button style-->
     <style name="reset_button_style">
         <item name="android:layout_marginBottom">@dimen/vertical_margin_reset_button</item>
+        <item name="android:textSize">@dimen/normal_text_size</item>
     </style>
 
 </resources>

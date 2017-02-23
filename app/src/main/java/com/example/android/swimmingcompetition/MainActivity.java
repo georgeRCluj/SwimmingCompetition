@@ -25,9 +25,63 @@ public class MainActivity extends AppCompatActivity {
     byte[][] firstSwimmer = new byte[][]{{5, 5, 5, 5}, {5, 5, 5, 5}, {5, 5, 5, 5}, {5, 5, 5, 5}};
 
     @Override
+    protected void onSaveInstanceState(Bundle dataToSave) {
+        super.onSaveInstanceState(dataToSave);
+        dataToSave.putShortArray("distanceKey", distance);
+        dataToSave.putShortArray("timeKey", time);
+        dataToSave.putShortArray("strokeKey", stroke);
+        dataToSave.putShortArray("scoreKey", score);
+        dataToSave.putShortArray("speedKey", speed);
+        dataToSave.putShortArray("stroke_rateKey", stroke_rate);
+        dataToSave.putFloatArray("nrKmsKey", nrKms);
+        dataToSave.putFloatArray("nrHoursKey", nrHours);
+        dataToSave.putSerializable("firstSwimmerKey", firstSwimmer);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /** if (savedInstanceState != null) {
+         score = savedInstanceState.getShortArray("scoreKey");
+         speed = savedInstanceState.getShortArray("speedKey");
+         displayDataTeam(score[0] + "", R.id.score_team_A);
+         displayDataTeam(score[1] + "", R.id.score_team_B);
+         displayDataTeam(speed[0] + " km/h", R.id.speedTeamA);
+         displayDataTeam(speed[1] + " km/h", R.id.speedTeamB);
+         } */
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle dataToRetrieve) {
+        super.onRestoreInstanceState(dataToRetrieve);
+        distance = dataToRetrieve.getShortArray("distanceKey");
+        time = dataToRetrieve.getShortArray("timeKey");
+        stroke = dataToRetrieve.getShortArray("strokeKey");
+        score = dataToRetrieve.getShortArray("scoreKey");
+        speed = dataToRetrieve.getShortArray("speedKey");
+        stroke_rate = dataToRetrieve.getShortArray("stroke_rateKey");
+        nrKms = dataToRetrieve.getFloatArray("nrKmsKey");
+        nrHours = dataToRetrieve.getFloatArray("nrHoursKey");
+        firstSwimmer = (byte[][]) (dataToRetrieve.getSerializable("firstSwimmerKey"));
+        displayDataTeam(score[0] + "", R.id.score_team_A);
+        displayDataTeam(score[1] + "", R.id.score_team_B);
+        displayDataTeam(speed[0] + " km/h", R.id.speedTeamA);
+        displayDataTeam(speed[1] + " km/h", R.id.speedTeamB);
+        displayDataTeam(stroke_rate[0] + " stk/\'", R.id.strokeTeamA);
+        displayDataTeam(stroke_rate[1] + " stk/\'", R.id.strokeTeamB);
+        displayDataTeam("T: " + distance[0] + " mt", R.id.totalDistanceSwimmer1);
+        displayDataTeam("T: " + distance[1] + " mt", R.id.totalDistanceSwimmer2);
+        displayDataTeam("T: " + distance[2] + " mt", R.id.totalDistanceSwimmer3);
+        displayDataTeam("T: " + distance[3] + " mt", R.id.totalDistanceSwimmer4);
+        displayDataTeam("T: " + time[0] / 60 + "\' " + time[0] % 60 + "\"", R.id.totalTimeSwimmer1);
+        displayDataTeam("T: " + time[1] / 60 + "\' " + time[1] % 60 + "\"", R.id.totalTimeSwimmer2);
+        displayDataTeam("T: " + time[2] / 60 + "\' " + time[2] % 60 + "\"", R.id.totalTimeSwimmer3);
+        displayDataTeam("T: " + time[3] / 60 + "\' " + time[3] % 60 + "\"", R.id.totalTimeSwimmer4);
+        displayDataTeam("T: " + stroke[0] + " stk", R.id.totalStrokesSwimmer1);
+        displayDataTeam("T: " + stroke[1] + " stk", R.id.totalStrokesSwimmer2);
+        displayDataTeam("T: " + stroke[2] + " stk", R.id.totalStrokesSwimmer3);
+        displayDataTeam("T: " + stroke[3] + " stk", R.id.totalStrokesSwimmer4);
     }
 
     public void displayDataTeam(String textToDisplay, int resourceId) {
@@ -293,10 +347,10 @@ public class MainActivity extends AppCompatActivity {
         displayDataTeam("T: " + distance[1] + " mt", R.id.totalDistanceSwimmer2);
         displayDataTeam("T: " + distance[2] + " mt", R.id.totalDistanceSwimmer3);
         displayDataTeam("T: " + distance[3] + " mt", R.id.totalDistanceSwimmer4);
-        displayDataTeam("T: " + time[0] + "\' " + time[0] + "\"", R.id.totalTimeSwimmer1);
-        displayDataTeam("T: " + time[1] + "\' " + time[1] + "\"", R.id.totalTimeSwimmer2);
-        displayDataTeam("T: " + time[2] + "\' " + time[2] + "\"", R.id.totalTimeSwimmer3);
-        displayDataTeam("T: " + time[3] + "\' " + time[3] + "\"", R.id.totalTimeSwimmer4);
+        displayDataTeam("T: " + time[0] / 60 + "\' " + time[0] % 60 + "\"", R.id.totalTimeSwimmer1);
+        displayDataTeam("T: " + time[1] / 60 + "\' " + time[1] % 60 + "\"", R.id.totalTimeSwimmer2);
+        displayDataTeam("T: " + time[2] / 60 + "\' " + time[2] % 60 + "\"", R.id.totalTimeSwimmer3);
+        displayDataTeam("T: " + time[3] / 60 + "\' " + time[3] % 60 + "\"", R.id.totalTimeSwimmer4);
         displayDataTeam("T: " + stroke[0] + " stk", R.id.totalStrokesSwimmer1);
         displayDataTeam("T: " + stroke[1] + " stk", R.id.totalStrokesSwimmer2);
         displayDataTeam("T: " + stroke[2] + " stk", R.id.totalStrokesSwimmer3);

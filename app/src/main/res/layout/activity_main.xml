@@ -57,6 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:saveEnabled="true"
                     android:text="@string/initial_score" />
 
             </LinearLayout>
@@ -386,12 +387,14 @@
         android:gravity="center"
         android:orientation="horizontal">
 
+        <!-- below minHeight = "0dp" because by default the system adds a fixed height over the text inside -->
         <Button
+            android:id="@+id/reset_button"
             style="@style/reset_button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="0dp"
             android:onClick="ResetButton"
             android:text="@string/resetButton" />
-
     </LinearLayout>
 </LinearLayout>

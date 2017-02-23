@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.swimmingcompetition.MainActivity">
+
+    <!-- HEADER below -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="@integer/main_screen_weight_1"
+        android:background="@drawable/ows_cropped_2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/game_name" />
+    </LinearLayout>
+
+    <!-- BODY below -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="@integer/main_screen_weight_2"
+        android:orientation="horizontal">
+
+        <!-- TEAM A -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/body_half_weight"
+            android:orientation="vertical">
+
+            <!-- Upper part: TEAM A, Score -->
+
+            <TextView
+                style="@style/Team_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/teamA" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/speedTeamA"
+                    style="@style/Pace_Stroke_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pace_string" />
+
+                <TextView
+                    android:id="@+id/score_team_A"
+                    style="@style/Score_Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:saveEnabled="true"
+                    android:text="@string/initial_score" />
+
+                <TextView
+                    android:id="@+id/strokeTeamA"
+                    style="@style/Pace_Stroke_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/stroke_string" />
+
+            </LinearLayout>
+
+            <!-- Lower part: Swimmers -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Swimmer 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_1_string" />
+
+                        <TextView
+                            android:id="@+id/swimmer1Add10mt"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_meters" />
+
+                        <TextView
+                            android:id="@+id/swimmer1Add30sec"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_30_seconds" />
+
+                        <TextView
+                            android:id="@+id/swimmer1Add10stk"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_strokes" />
+                    </LinearLayout>
+
+                    <!-- Totals on swimmer 1 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_1_string"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/totalDistanceSwimmer1"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_meters" />
+
+                        <TextView
+                            android:id="@+id/totalTimeSwimmer1"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_time" />
+
+                        <TextView
+                            android:id="@+id/totalStrokesSwimmer1"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_strokes" />
+                    </LinearLayout>
+
+                    <!-- Swimmer 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_2_string" />
+
+                        <TextView
+                            android:id="@+id/swimmer2Add10mt"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_meters" />
+
+                        <TextView
+                            android:id="@+id/swimmer2Add30sec"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_30_seconds" />
+
+                        <TextView
+                            android:id="@+id/swimmer2Add10stk"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_strokes" />
+                    </LinearLayout>
+
+                    <!-- Totals on swimmer 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_2_string"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/totalDistanceSwimmer2"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_meters" />
+
+                        <TextView
+                            android:id="@+id/totalTimeSwimmer2"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_time" />
+
+                        <TextView
+                            android:id="@+id/totalStrokesSwimmer2"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_strokes" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- Separator below -->
+        <View
+            style="@style/Separator_style"
+            android:layout_width="@dimen/separator_width"
+            android:layout_height="match_parent" />
+
+        <!-- TEAM B -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="@integer/body_half_weight"
+            android:orientation="vertical">
+
+            <!-- Upper part: TEAM B, Score -->
+
+            <TextView
+                style="@style/Team_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/teamB" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/speedTeamB"
+                    style="@style/Pace_Stroke_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pace_string" />
+
+                <TextView
+                    android:id="@+id/score_team_B"
+                    style="@style/Score_Style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:saveEnabled="true"
+                    android:text="@string/initial_score" />
+
+                <TextView
+                    android:id="@+id/strokeTeamB"
+                    style="@style/Pace_Stroke_Style"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/stroke_string" />
+
+            </LinearLayout>
+
+            <!-- Lower part: Swimmers -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Swimmer 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_3_string" />
+
+                        <TextView
+                            android:id="@+id/swimmer3Add10mt"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_meters" />
+
+                        <TextView
+                            android:id="@+id/swimmer3Add30sec"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_30_seconds" />
+
+                        <TextView
+                            android:id="@+id/swimmer3Add10stk"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_strokes" />
+                    </LinearLayout>
+
+                    <!-- Totals on swimmer 3 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_3_string"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/totalDistanceSwimmer3"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_meters" />
+
+                        <TextView
+                            android:id="@+id/totalTimeSwimmer3"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_time" />
+
+                        <TextView
+                            android:id="@+id/totalStrokesSwimmer3"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_strokes" />
+                    </LinearLayout>
+
+                    <!-- Swimmer 4 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_4_string" />
+
+                        <TextView
+                            android:id="@+id/swimmer4Add10mt"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_meters" />
+
+                        <TextView
+                            android:id="@+id/swimmer4Add30sec"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_30_seconds" />
+
+                        <TextView
+                            android:id="@+id/swimmer4Add10stk"
+                            style="@style/Button_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="swimmerButtons"
+                            android:text="@string/add_10_strokes" />
+                    </LinearLayout>
+
+                    <!-- Totals on swimmer 2 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/Swimmer_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/swimmer_4_string"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/totalDistanceSwimmer4"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_meters" />
+
+                        <TextView
+                            android:id="@+id/totalTimeSwimmer4"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_time" />
+
+                        <TextView
+                            android:id="@+id/totalStrokesSwimmer4"
+                            style="@style/Data_Style"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_strokes" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RESET Button below -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reset_button"
+            style="@style/reset_button_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:onClick="ResetButton"
+            android:text="@string/resetButton" />
+
+    </LinearLayout>
+</LinearLayout>
