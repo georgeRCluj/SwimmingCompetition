@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
      * Initialization of arrays distance, time, stroke (for each swimmer, length 4), score, speed, nrKms, nrHours (for each team, length 2)
      * used 'short' instead of 'int' to save memory; Min / max value -32,768 --- +32,768
      * used 'float' instead of 'double' to save memory (32bit vs 64bit)
-     * please see explanation for the matrix firstSwimmer in the method ScoreKeeper()
+     * please see explanation for the matrix firstSwimmer in the method ScoreKeeper() 
      */
     private short[] distance = new short[4];
     private short[] time = new short[4];
