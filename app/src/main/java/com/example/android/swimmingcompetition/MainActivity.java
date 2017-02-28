@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
      * Initialization of arrays distance, time, stroke (for each swimmer, length 4), score, speed, nrKms, nrHours (for each team, length 2)
      * used 'short' instead of 'int' to save memory; Min / max value -32,768 --- +32,768
      * used 'float' instead of 'double' to save memory (32bit vs 64bit)
-     * please see explanation for the matrix firstSwimmer in the method ScoreKeeper() 
+     * please see explanation for the matrix firstSwimmer in the method ScoreKeeper()
      */
     private short[] distance = new short[4];
     private short[] time = new short[4];
@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.swimmer2Add10mt):
             case (R.id.swimmer3Add10mt):
             case (R.id.swimmer4Add10mt): {
-                distance[swNo] = (short) (distance[swNo] + ADDMT);                     /** casting to 'short', because of transformation to int inside operations */
+                distance[swNo] += ADDMT;
                 if (team == 0) {
                     nrKms[0] = ((float) (distance[0] + distance[1])) / KMTOMT;        /** need of casting to 'float' before dividing, since the operation inside is 'int' */
                 } else nrKms[1] = ((float) (distance[2] + distance[3])) / KMTOMT;
@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.swimmer2Add30sec):
             case (R.id.swimmer3Add30sec):
             case (R.id.swimmer4Add30sec): {
-                time[swNo] = (short) (time[swNo] + ADDSEC);
+                time[swNo] += ADDSEC;
                 if (team == 0) {
                     nrHours[0] = ((float) (time[0] + time[1])) / SECTOHRS;
                     stroke_rate[0] = (short) Math.round(((float) (stroke[0] + stroke[1])) / (nrHours[0] * HRSTOMIN));
@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             case (R.id.swimmer2Add10stk):
             case (R.id.swimmer3Add10stk):
             case (R.id.swimmer4Add10stk): {
-                stroke[swNo] = (short) (stroke[swNo] + ADDSTK);
+                stroke[swNo] += ADDSTK;
                 if (nrHours[team] != 0) {
                     if (team == 0)
                         stroke_rate[0] = (short) Math.round(((float) (stroke[0] + stroke[1])) / (nrHours[0] * HRSTOMIN));
@@ -287,9 +287,9 @@ public class MainActivity extends AppCompatActivity {
          * 5) the optimal stroke rate is between 50 and 100 strokes / minute; if the swimmer is outside this range, then 5 points are subtracted at milestone arrival;
          */
         short mileStone[] = new short[]{100, 200, 300, 400};
-        byte vLine, hLine;                                                  /** vLine = each vertical Line from firstSwimmer matrix represents a milestone (100, 200, 300 or 400 meters) */
+        byte vLine, hLine;                                                  /** @param vLine = each vertical Line from firstSwimmer matrix represents a milestone (100, 200, 300 or 400 meters) */
         search:
-        /** hLine = each horizontal Line from firstSwimmer matrix represents the order of swimmers arrival at each milestone */
+        /** @param hLine = each horizontal Line from firstSwimmer matrix represents the order of swimmers arrival at each milestone */
         for (vLine = 0; vLine <= 3; vLine++) {                              /** in this double loop we run the whole firstSwimmer matrix: from top to bottom (100,200,300,400 meters) and from left to right (to know the order of swimmers arrival) */
             for (hLine = 0; hLine <= 3; hLine++) {
                 if (distance[hLine] == mileStone[vLine]) {                  /** this "if" checks if the distance of the swimmer reached the milestone (100,200,300,400 meters) */
@@ -302,38 +302,38 @@ public class MainActivity extends AppCompatActivity {
                             if (hLine == 0 || hLine == 1) {                 /** if swimmer is part of team A (swimmer 1 [position 0] or swimmer 2 [position 1]) or team B (swimmer 3/4) */
                                 switch (counter) {
                                     case 0:
-                                        score[0] = (short) (score[0] + SCORE4);
+                                        score[0] += SCORE4;                 /** auto typecasting here when using operators "()=" */
                                         break;
                                     case 1:
-                                        score[0] = (short) (score[0] + SCORE3);
+                                        score[0] += SCORE3;
                                         break;
                                     case 2:
-                                        score[0] = (short) (score[0] + SCORE2);
+                                        score[0] += SCORE2;
                                         break;
                                     case 3:
-                                        score[0] = (short) (score[0] + SCORE1);
+                                        score[0] += SCORE1;
                                         break;
                                 }
                                 if (swimmer_stroke_rate < IDEALSTKDOWN || swimmer_stroke_rate > IDEALSTKUP)  /** if swimmer stroke rate is outside ideal range 50-100, then 5 points are subtracted */
-                                    score[0] = (short) (score[0] - SCOREMIN);
+                                    score[0] -= SCOREMIN;
                                 displayDataTeam(score[0] + "", R.id.score_team_A);          /** added "" to score[0] because the input has to be String, as per declared in the method */
                             } else if (hLine == 2 || hLine == 3) {
                                 switch (counter) {
                                     case 0:
-                                        score[1] = (short) (score[1] + SCORE4);
+                                        score[1] += SCORE4;
                                         break;
                                     case 1:
-                                        score[1] = (short) (score[1] + SCORE3);
+                                        score[1] += SCORE3;
                                         break;
                                     case 2:
-                                        score[1] = (short) (score[1] + SCORE2);
+                                        score[1] += SCORE2;
                                         break;
                                     case 3:
-                                        score[1] = (short) (score[1] + SCORE1);
+                                        score[1] += SCORE1;
                                         break;
                                 }
                                 if (swimmer_stroke_rate < IDEALSTKDOWN || swimmer_stroke_rate > IDEALSTKUP)
-                                    score[1] = (short) (score[1] - SCOREMIN);
+                                    score[1] -= SCOREMIN;
                                 displayDataTeam(score[1] + "", R.id.score_team_B);
                             }
                             break search;
