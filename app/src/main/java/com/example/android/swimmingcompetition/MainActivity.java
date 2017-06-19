@@ -113,7 +113,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void swimmerButtons(View v) {
         int resourceId = v.getId();
-        int swNo = 0, team = 0, viewId1 = 0, viewId2 = 0, viewId3 = 0;/** swNo - swimmer number; */
+        int swNo = 0;
+        int team = 0;
+        int viewId1 = 0;
+        int viewId2 = 0;
+        int viewId3 = 0;
+        /** swNo - swimmer number; */
 
         switch (resourceId) {
             /** DISTANCE */
